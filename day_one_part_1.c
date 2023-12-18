@@ -7,7 +7,7 @@ int main() {
 	int acc = 0;
 	char str[64];
 	FILE* file;
-	file = fopen("day_one_part_1.txt", "r");
+	file = fopen("day_one.txt", "r");
 
 	while (fgets(str, sizeof(str), file)) {
 		char curr[2];
@@ -20,10 +20,7 @@ int main() {
 			}
 		}
 
-		while(str[i] != '\0') {
-			i++;
-		}
-		i -= 1;
+		i = strlen(str) - 1;
 
 		while (!isdigit(str[i])) {
 			i--;
