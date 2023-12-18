@@ -33,6 +33,8 @@ int main() {
 	}
 
 	fclose(file);
+
+	/* this is the final answer */
 	printf("\n%d\n", acc);
 
 	return 0;
