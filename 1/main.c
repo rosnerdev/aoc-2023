@@ -3,7 +3,48 @@
 #include "string.h"
 #include "ctype.h"
 
+void part1();
+void part2();
+
 int main() {
+    part1();
+    part2();
+    return 0;
+}
+
+void part1() {
+	int acc = 0;
+	char str[64];
+	FILE* file;
+	file = fopen("day_one.txt", "r");
+
+	while (fgets(str, sizeof(str), file)) {
+		char curr[2];
+		
+		int i;
+		for (i = 0; str[i] != '\0'; i++) {
+			if (isdigit(str[i])) {
+				curr[0] = str[i];	
+				break;
+			}
+		}
+
+		i = strlen(str) - 1;
+
+		while (!isdigit(str[i])) {
+			i--;
+		}
+		
+		curr[1] = str[i];
+		acc += atoi(curr);
+	}
+
+	fclose(file);
+
+	printf("Part 1: %d\n", acc);
+}
+
+void part2() {
 	int acc = 0;
 	char str[64];
 	FILE* file;
@@ -165,13 +206,10 @@ int main() {
 		
 		curr[0] = nums[0];
 		curr[1] = nums[j-1];
-		
-		printf("%s\n", curr);
+
 		acc += atoi(curr);
 	}
 
 	fclose(file);
-	printf("\n%d\n", acc);
-
-	return 0;
+	printf("Part 2: %d\n", acc);
 }
