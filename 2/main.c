@@ -68,15 +68,12 @@ void part1() {
 					red = 0;
 					green = 0;
 					blue = 0;
-				}  else {
-					break;
-				}			
+				} else break;	
 			} else if (str[c] == ',') {
 				c += 2;
 			} else {
 				if (red <= 12 && green <= 13 && blue <= 14) {
 					line_sum += line;
-					printf("Added!\n");
 				}
 				break;
 			}	
