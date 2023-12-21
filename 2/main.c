@@ -41,26 +41,26 @@ void part1() {
 			}
 			
 			c += 1;
+			
+			switch (str[c]) {
+				case 'r':
+					red += atoi(curr_num);
+					c += 3;
+					break;
 
-			if (c >= strlen(str)) break;
+				case 'g':
+					green += atoi(curr_num);
+					c += 5;
+					break;
 
-			if (str[c] == 'r') {
-				red += atoi(curr_num);
-				c += 3;
-			}	
-			else if (str[c] == 'g') {
-				green += atoi(curr_num);
-				c += 5;
-			}				
-			else if (str[c] == 'b') {
-				blue += atoi(curr_num);
-				c += 4;
+				case 'b':
+					blue += atoi(curr_num);
+					c += 4;
+					break;
 			}
 
 			curr_i = 0;			
-			curr_num[0] = ' ';
-			curr_num[1] = ' ';
-			curr_num[2] = ' ';
+			memset(curr_num, ' ', 3);
 			
 			if (str[c] == ';') {
 				if (red <= 12 && green <= 13 && blue <= 14) {
