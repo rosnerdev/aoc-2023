@@ -4,9 +4,11 @@
 #include "ctype.h"
 
 void part1();
+void part2();
 
 int main() {
     part1();
+    part2();
     return 0;
 }
 
@@ -66,7 +68,6 @@ int adj(int num, int row, int start, int end, char mat[140][140]) {
 }
 
 void part1() {
-    int old;
     int sum = 0, num_i = 0;
     char curr_num[6];
 	int i = 0, j = 0;
@@ -92,9 +93,7 @@ void part1() {
                 num_i++;
             } else {
                 if (isdigit(mat[i][j-1])) {
-                    old = sum;
                     sum += adj(atoi(curr_num), i, j-strlen(curr_num), j, mat);
-                    if (sum - old == atoi(curr_num)) printf("%s\n", curr_num);
                     num_i = 0;
                     memset(curr_num, '\0', sizeof(curr_num));
                 }
@@ -104,3 +103,5 @@ void part1() {
 
     printf("Part 1: %d\n", sum);
 }
+
+void part2() {}
