@@ -103,5 +103,3 @@ void part1() {
 
     printf("Part 1: %d\n", sum);
 }
-
-void part2() {}
